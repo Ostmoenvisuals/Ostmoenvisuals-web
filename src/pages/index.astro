@@ -19,10 +19,10 @@ const tjenester = [
 ];
 
 const prosjekter = [
-  { href: '/prosjekter/troll-trevarefabrikk', tittel: 'Troll Trevarefabrikk', bilde: verksted, alt: 'Snekker ved arbeidsbenken i verkstedet hos Troll Trevarefabrikk' },
-  { href: '/prosjekter/magnat-kaffehus', tittel: 'Magnat Kaffehus', bilde: kaffe, alt: 'Barista som lager kaffe hos Magnat Kaffehus' },
-  { href: '/prosjekter/eske-interior', tittel: 'Eske interiør', bilde: interior, alt: 'Varmt interiør i butikken til Eske interiør' },
-  { href: '/prosjekter/fredensborg-fritid', tittel: 'Fredensborg Fritid', bilde: kyst, alt: 'Båt i havn i solnedgang, bilde for Fredensborg Fritid' },
+  { href: '/prosjekter/troll-trevarefabrikk', tittel: 'Troll Trevarefabrikk', meta: 'Håndverk og produksjon', bilde: verksted, alt: 'Snekker ved arbeidsbenken i verkstedet hos Troll Trevarefabrikk' },
+  { href: '/prosjekter/magnat-kaffehus', tittel: 'Magnat Kaffehus', meta: 'Miljøbilder · 2023', bilde: kaffe, alt: 'Barista som lager kaffe hos Magnat Kaffehus' },
+  { href: '/prosjekter/eske-interior', tittel: 'Eske interiør', meta: 'Butikk og interiør', bilde: interior, alt: 'Varmt interiør i butikken til Eske interiør' },
+  { href: '/prosjekter/fredensborg-fritid', tittel: 'Fredensborg Fritid', meta: 'Høstbilder', bilde: kyst, alt: 'Båt i havn i solnedgang, bilde for Fredensborg Fritid' },
 ];
 
 const sitater = [
@@ -39,7 +39,7 @@ const sitater = [
   <!-- 2. Hero -->
   <section class="section section--hero">
     <div class="container hero">
-      <div class="hero__text reveal">
+      <div class="hero__text fade-in">
         <p class="ov-eyebrow">Foto og video · Drammen</p>
         <h1 class="display">Effektive foto- og videoproduksjoner.</h1>
         <p class="body-lg muted">Moderne og effektiv produksjon av innhold i alle formater, til alle kanaler. Merkevarefilm, kursvideo, internfilm og korte annonser.</p>
@@ -48,7 +48,7 @@ const sitater = [
           <a class="ov-btn ov-btn--outline" href="/kontakt">Priser og kontakt</a>
         </div>
       </div>
-      <div class="hero__media reveal">
+      <div class="hero__media fade-in">
         <Image src={btsKyst} alt="Fotograf i oransje vest som filmer ved sjøen" widths={[600, 900, 1200, 1800]} sizes="(min-width: 900px) 55vw, 100vw" loading="eager" fetchpriority="high" />
         <span class="ov-chip hero__chip">Bak kamera</span>
       </div>
@@ -76,7 +76,7 @@ const sitater = [
           <li class="tjeneste reveal">
             <h3 class="h3">{t.tittel}</h3>
             <p class="body muted">{t.tekst}</p>
-            <a class="text-link" href={t.href}>Les mer<span class="sr-only"> om {t.tittel}</span></a>
+            <a class="text-link" href={t.href}>Les om {t.tittel.toLowerCase()} <span aria-hidden="true">→</span></a>
           </li>
         ))}
       </ul>
@@ -87,7 +87,10 @@ const sitater = [
   <section class="section section--tight-top" aria-labelledby="prosjekter-tittel">
     <div class="container">
       <div class="section-head reveal">
-        <h2 id="prosjekter-tittel" class="h1">Utvalgte prosjekter.</h2>
+        <div class="section-head__text">
+          <p class="ov-eyebrow">Prosjekter</p>
+          <h2 id="prosjekter-tittel" class="h1">Utvalgte prosjekter</h2>
+        </div>
         <a class="ov-btn ov-btn--outline" href="/prosjekter">Se alle prosjekter</a>
       </div>
       <ul class="prosjekter">
@@ -96,8 +99,12 @@ const sitater = [
             <a class="ov-card" href={p.href}>
               <div class="ov-card__media">
                 <Image src={p.bilde} alt={p.alt} widths={[400, 700, 1000]} sizes="(min-width: 700px) 45vw, 100vw" />
+                <span class="ov-chip">Foto</span>
               </div>
-              <h3 class="ov-card__title">{p.tittel}</h3>
+              <div>
+                <h3 class="ov-card__title">{p.tittel}</h3>
+                <p class="ov-card__meta">{p.meta}</p>
+              </div>
             </a>
           </li>
         ))}
@@ -110,6 +117,7 @@ const sitater = [
     <div class="container">
       <div class="ov-section-torv showreel" data-theme="torv">
         <div class="showreel__head reveal">
+          <p class="ov-eyebrow">Showreel</p>
           <h2 id="showreel-tittel" class="h1">Se hva vi har laget for andre.</h2>
           <a class="ov-btn ov-btn--primary" href="https://www.youtube.com/@stmoenvisuals2221/videos" target="_blank" rel="noopener">Spill av showreel<span class="sr-only"> (åpner YouTube i ny fane)</span></a>
         </div>
@@ -130,8 +138,9 @@ const sitater = [
       <div class="omoss__text reveal">
         <p class="ov-eyebrow">Om oss</p>
         <h2 id="om-tittel" class="h1">Bak kamera siden 2014.</h2>
-        <p class="body-lg muted">Tobias Østmoen er digital innholdsprodusent med spesialisering innen foto og video. Han har jobbet heltid med det siden 2016, og tar oppdrag i hele Norge, de fleste i Oslo-området.</p>
-        <a class="text-link" href="/om-oss">Mer om oss</a>
+        <p class="body-lg muted">Tobias Østmoen startet for seg selv i 2014 og har jobbet med foto og video på heltid siden 2016. I dag tar Østmoen Visuals oppdrag i hele Norge, de fleste i Oslo-området, og kombinerer innholdsproduksjon med kunnskap om netthandel og markedsføring.</p>
+        <p class="caption">Godkjent lærlingbedrift</p>
+        <a class="ov-btn ov-btn--outline" href="/om-oss">Mer om oss</a>
       </div>
     </div>
   </section>
@@ -146,7 +155,7 @@ const sitater = [
             <li>
               <figure>
                 <blockquote class="body-lg">«{s.tekst}»</blockquote>
-                <figcaption class="caption"><strong class="label" style="color: var(--ink)">{s.av}</strong><br />{s.rolle}</figcaption>
+                <figcaption class="caption"><strong style="color: var(--ink)">{s.av}</strong> · {s.rolle}</figcaption>
               </figure>
             </li>
           ))}
@@ -159,11 +168,16 @@ const sitater = [
   <section class="section" aria-labelledby="cta-tittel">
     <div class="container">
       <div class="cta reveal">
-        <h2 id="cta-tittel" class="h1">Har du et prosjekt på gang?</h2>
-        <a class="ov-btn ov-btn--primary" href="/kontakt">Book en prat</a>
-        <p class="body">
-          <a href="tel:+4794247771">+47 942 47 771</a> · <a href="mailto:post@ostmoenvisuals.com">post@ostmoenvisuals.com</a>
-        </p>
+        <div class="cta__text">
+          <h2 id="cta-tittel" class="h1">Har du et prosjekt på gang?</h2>
+          <p class="body-lg muted">Fortell kort hva du trenger, så kommer vi tilbake med forslag og pris.</p>
+        </div>
+        <div class="cta__actions">
+          <a class="ov-btn ov-btn--primary" href="/kontakt">Book en prat</a>
+          <p class="body">
+            <a href="tel:+4794247771">+47 942 47 771</a><br /><a href="mailto:post@ostmoenvisuals.com">post@ostmoenvisuals.com</a>
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -172,6 +186,7 @@ const sitater = [
 <style>
   .section-title { max-width: 18ch; margin-bottom: var(--space-8); }
   @media (min-width: 900px) { .section-title { margin-bottom: var(--space-12); } }
+  .section-head__text { display: flex; flex-direction: column; gap: var(--space-3); }
   .section-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8); }
 
   /* Hero */
@@ -182,7 +197,7 @@ const sitater = [
   .hero__text { display: flex; flex-direction: column; gap: var(--space-6); align-items: flex-start; }
   .hero__text .body-lg { max-width: 52ch; }
   .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
-  .hero__media { position: relative; border-radius: var(--radius-lg); overflow: hidden; background: var(--surface-raised); aspect-ratio: 4 / 3; }
+  .hero__media { position: relative; border-radius: var(--radius-lg); overflow: hidden; background: var(--surface-raised); aspect-ratio: 5 / 4; }
   .hero__media :global(img) { width: 100%; height: 100%; object-fit: cover; }
   .hero__chip { position: absolute; left: var(--space-4); bottom: var(--space-4); }
 
@@ -215,12 +230,16 @@ const sitater = [
   .omoss__text .body-lg { max-width: 48ch; }
 
   /* Sitater */
-  .sitater-seksjon__inner { display: flex; flex-direction: column; gap: var(--space-8); padding-top: var(--space-8); border-top: 1px solid var(--line); }
+  .sitater-seksjon__inner { display: flex; flex-direction: column; gap: var(--space-8); }
   .sitater { display: grid; gap: var(--space-8); }
+  .sitater blockquote { font-size: 17px; line-height: 26px; }
   @media (min-width: 900px) { .sitater { grid-template-columns: repeat(3, 1fr); gap: var(--space-12); } }
-  .sitater figure { display: flex; flex-direction: column; gap: var(--space-4); }
+  .sitater figure { padding-top: var(--space-4); border-top: 1px solid var(--line-strong); display: flex; flex-direction: column; gap: var(--space-4); }
 
   /* CTA */
+  .cta__text { display: flex; flex-direction: column; gap: var(--space-4); max-width: 640px; }
+  .cta__actions { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+  @media (min-width: 900px) { .cta { flex-direction: row !important; align-items: center !important; justify-content: space-between; } }
   .cta { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-6); background: var(--surface-raised); border-radius: var(--radius-xl); padding: var(--space-8); }
   @media (min-width: 900px) { .cta { padding: var(--space-14); } }
   .cta a:not(.ov-btn) { text-decoration: none; }

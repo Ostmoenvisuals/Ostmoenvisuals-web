@@ -6,7 +6,6 @@ const year = new Date().getFullYear();
     <div class="site-footer__grid">
       <div class="site-footer__brand">
         <img src="/logo/ostmoen_visuals_logomark_black.svg" alt="Østmoen Visuals" width="40" height="40" />
-        <p class="caption">Godkjent lærlingbedrift</p>
       </div>
 
       <div>
@@ -32,11 +31,18 @@ const year = new Date().getFullYear();
           <li><a href="https://www.youtube.com/@stmoenvisuals2221/videos" rel="noopener">YouTube</a></li>
         </ul>
       </div>
+
+      <div>
+        <h2 class="label">Mer</h2>
+        <ul class="body">
+          <li><a href="/personvern">Personvern og rettigheter</a></li>
+          <li class="muted">Godkjent lærlingbedrift</li>
+        </ul>
+      </div>
     </div>
 
     <div class="site-footer__bottom caption">
       <span>© {year} Østmoen Visuals</span>
-      <a href="/personvern">Personvern</a>
     </div>
   </div>
 </footer>
@@ -45,7 +51,7 @@ const year = new Date().getFullYear();
   .site-footer { border-top: 1px solid var(--line); padding-block: var(--space-12) var(--space-8); margin-top: var(--space-12); }
   .site-footer__grid { display: grid; gap: var(--space-8); grid-template-columns: 1fr; }
   @media (min-width: 700px) { .site-footer__grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1000px) { .site-footer__grid { grid-template-columns: 1.2fr 1fr 1fr 1fr; } }
+  @media (min-width: 1000px) { .site-footer__grid { grid-template-columns: 0.6fr 1.2fr 1.2fr 1fr 1.2fr; } }
   .site-footer__brand { display: flex; flex-direction: column; gap: var(--space-3); }
   .site-footer__brand img { width: 40px; height: 40px; }
   .site-footer h2 { margin-bottom: var(--space-3); }
