@@ -1,0 +1,79 @@
+/* Østmoen Visuals – komponentstiler. Bygger på tokens.css (fargene, mellomrom og radier som CSS-variabler). */
+
+.ov-root {
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Knapper: alltid pill, minst 44px høye */
+.ov-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font: 600 15px/20px var(--font-sans);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.ov-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.ov-btn--primary { background: var(--accent); color: var(--on-accent); }
+.ov-btn--primary:hover { filter: brightness(0.92); }
+.ov-btn--dark { background: var(--surface-inverse); color: var(--ink-inverse); }
+.ov-btn--dark:hover { filter: brightness(1.25); }
+.ov-btn--outline { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+.ov-btn--outline:hover { border-color: var(--ink); }
+.ov-btn--sm { min-height: 44px; padding: 0 var(--space-4); font-size: 14px; }
+
+/* Chip: etiketter på bilder og filtre */
+.ov-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font: 600 13px/18px var(--font-sans);
+}
+.ov-chip--raised { background: var(--surface-raised); }
+
+/* Overlinje over overskrifter */
+.ov-eyebrow { margin: 0; font: 600 15px/20px var(--font-sans); color: var(--accent); }
+
+/* Prosjektkort */
+.ov-card { display: flex; flex-direction: column; gap: var(--space-4); color: var(--ink); text-decoration: none; }
+.ov-card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-4);
+  box-sizing: border-box;
+}
+.ov-card__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.ov-card__media .ov-chip { position: relative; }
+.ov-card__title { margin: 0; font: 600 24px/30px var(--font-sans); letter-spacing: -0.015em; }
+.ov-card__meta { margin: 0; font: 500 13px/18px var(--font-sans); color: var(--ink-muted); }
+.ov-card:hover .ov-card__title { color: var(--accent); }
+
+/* Torv-seksjon: én mørk flate per side. Brukes med data-theme="torv" på samme element,
+   så alle tokens inni (ink, accent, knapper) bytter til Torv-verdiene. */
+.ov-section-torv {
+  border-radius: var(--radius-xl);
+  padding: var(--space-14);
+  background: var(--surface);
+  color: var(--ink);
+}
+@media (max-width: 640px) { .ov-section-torv { padding: var(--space-8); } }

@@ -1,0 +1,88 @@
+/* Østmoen Visuals – design tokens (generert fra designsystemet, versjon 1).
+   Temaet Dagslys er standard. Sett data-theme="torv" på en seksjon for Torv-verdiene. */
+
+:root,
+[data-theme="dagslys"] {
+  /* Merkefarger */
+  --brand-papir: #f5f1ea;   /* grunn, ~55 % */
+  --brand-leire: #e7ded0;   /* rolige flater, ~15 % */
+  --brand-sand: #c9b9a3;    /* linjer, plassholdere – aldri tekst på Papir */
+  --brand-valnott: #6e5f55; /* dempet tekst på lyse flater */
+  --brand-torv: #2b211c;    /* én mørk flate per side, ~10 % */
+  --brand-blekk: #1a1a1a;   /* tekst og logo */
+  --brand-brent: #b8461f;   /* aksent, under 3 % */
+
+  /* Semantiske farger – bruk disse i komponenter */
+  --surface: var(--brand-papir);
+  --surface-raised: var(--brand-leire);
+  --surface-inverse: var(--brand-torv);
+  --ink: var(--brand-blekk);
+  --ink-muted: var(--brand-valnott);
+  --ink-inverse: var(--brand-papir);
+  --line: #ddd5c8;
+  --line-strong: #8a7a6c;
+  --accent: var(--brand-brent);
+  --on-accent: #ffffff;
+  --focus: var(--brand-brent);
+  color-scheme: light;
+}
+
+[data-theme="torv"] {
+  --surface: var(--brand-torv);
+  --surface-raised: #3a2d26;
+  --surface-inverse: var(--brand-papir);
+  --ink: var(--brand-papir);
+  --ink-muted: var(--brand-sand);
+  --ink-inverse: var(--brand-torv);
+  --line: #4a3d35;
+  --line-strong: #8a7a6c;
+  --accent: #e58a5f;
+  --on-accent: var(--brand-torv);
+  --focus: #e58a5f;
+  color-scheme: dark;
+}
+
+:root {
+  /* Mellomrom */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;   /* minste sidemarg på mobil */
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-14: 56px;  /* sidemarg desktop */
+  --space-24: 96px;  /* mellom seksjoner desktop */
+
+  /* Radier – fra hjørnene i logomerket */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* Skygge – bare for mockups av trykksaker, ikke i grensesnittet */
+  --shadow-lift: 0 18px 40px rgba(43, 33, 28, 0.14);
+
+  /* Font */
+  --font-sans: "Manrope", "Helvetica Neue", Arial, sans-serif;
+
+  /* Bevegelse */
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fade: 500ms;
+  --dur-hover: 200ms;
+}
+
+/* Tekststiler. Overskriftene krymper på mobil. */
+.display { font: 500 clamp(40px, 5vw, 72px) / 1.04 var(--font-sans); letter-spacing: -0.035em; text-wrap: balance; }
+.h1      { font: 500 clamp(34px, 4vw, 52px) / 1.08 var(--font-sans); letter-spacing: -0.03em; text-wrap: balance; }
+.h2      { font: 500 clamp(28px, 3vw, 36px) / 1.17 var(--font-sans); letter-spacing: -0.025em; text-wrap: balance; }
+.h3      { font: 600 24px / 30px var(--font-sans); letter-spacing: -0.015em; }
+.body-lg { font: 400 18px / 30px var(--font-sans); }
+.body    { font: 400 16px / 26px var(--font-sans); }
+.label   { font: 600 15px / 20px var(--font-sans); }
+.caption { font: 500 13px / 18px var(--font-sans); color: var(--ink-muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fade: 0ms; --dur-hover: 0ms; }
+}

@@ -1,0 +1,57 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <img src="/logo/ostmoen_visuals_logomark_black.svg" alt="Østmoen Visuals" width="40" height="40" />
+        <p class="caption">Godkjent lærlingbedrift</p>
+      </div>
+
+      <div>
+        <h2 class="label">Østmoen Visuals</h2>
+        <address class="body muted">
+          Loe Bruk 13<br />3300 Hokksund<br />Org.nr. 913 229 940
+        </address>
+      </div>
+
+      <div>
+        <h2 class="label">Kontakt</h2>
+        <ul class="body">
+          <li><a href="tel:+4794247771">+47 942 47 771</a></li>
+          <li><a href="mailto:post@ostmoenvisuals.com">post@ostmoenvisuals.com</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="label">Følg oss</h2>
+        <ul class="body">
+          <li><a href="https://www.instagram.com/ostmoenvisuals/" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/in/tobias-%C3%B8stmoen-38a81590/" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@stmoenvisuals2221/videos" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom caption">
+      <span>© {year} Østmoen Visuals</span>
+      <a href="/personvern">Personvern</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer { border-top: 1px solid var(--line); padding-block: var(--space-12) var(--space-8); margin-top: var(--space-12); }
+  .site-footer__grid { display: grid; gap: var(--space-8); grid-template-columns: 1fr; }
+  @media (min-width: 700px) { .site-footer__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .site-footer__grid { grid-template-columns: 1.2fr 1fr 1fr 1fr; } }
+  .site-footer__brand { display: flex; flex-direction: column; gap: var(--space-3); }
+  .site-footer__brand img { width: 40px; height: 40px; }
+  .site-footer h2 { margin-bottom: var(--space-3); }
+  .site-footer address { font-style: normal; }
+  .site-footer ul { display: flex; flex-direction: column; gap: var(--space-1); }
+  .site-footer a { text-decoration: none; }
+  .site-footer a:hover { color: var(--accent); }
+  .site-footer__bottom { display: flex; justify-content: space-between; gap: var(--space-4); margin-top: var(--space-12); padding-top: var(--space-6); border-top: 1px solid var(--line); }
+</style>

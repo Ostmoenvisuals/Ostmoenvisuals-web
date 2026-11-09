@@ -1,0 +1,179 @@
+{
+  "redirects": [
+    {
+      "source": "/hjem",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/videoproduksjon",
+      "destination": "/video",
+      "permanent": true
+    },
+    {
+      "source": "/fotografering",
+      "destination": "/foto",
+      "permanent": true
+    },
+    {
+      "source": "/ai-oversetting-teksting-dubbing-videoinnhold",
+      "destination": "/video/ai-teksting",
+      "permanent": true
+    },
+    {
+      "source": "/omoss",
+      "destination": "/om-oss",
+      "permanent": true
+    },
+    {
+      "source": "/personvern-og-rettigheter",
+      "destination": "/personvern",
+      "permanent": true
+    },
+    {
+      "source": "/---",
+      "destination": "/prosjekter/---",
+      "permanent": true
+    },
+    {
+      "source": "/conturo",
+      "destination": "/prosjekter/conturo",
+      "permanent": true
+    },
+    {
+      "source": "/conva",
+      "destination": "/prosjekter/conva",
+      "permanent": true
+    },
+    {
+      "source": "/eiendomshjornet",
+      "destination": "/prosjekter/eiendomshjornet",
+      "permanent": true
+    },
+    {
+      "source": "/eske-event",
+      "destination": "/prosjekter/eske-event",
+      "permanent": true
+    },
+    {
+      "source": "/eske-interior",
+      "destination": "/prosjekter/eske-interior",
+      "permanent": true
+    },
+    {
+      "source": "/fjellmobler",
+      "destination": "/prosjekter/fjellmobler",
+      "permanent": true
+    },
+    {
+      "source": "/fredensborg-fritid",
+      "destination": "/prosjekter/fredensborg-fritid",
+      "permanent": true
+    },
+    {
+      "source": "/henka-revisjon",
+      "destination": "/prosjekter/henka-revisjon",
+      "permanent": true
+    },
+    {
+      "source": "/hvite-smil-as",
+      "destination": "/prosjekter/hvite-smil-as",
+      "permanent": true
+    },
+    {
+      "source": "/k391",
+      "destination": "/prosjekter/k391",
+      "permanent": true
+    },
+    {
+      "source": "/kaffeknappen",
+      "destination": "/prosjekter/kaffeknappen",
+      "permanent": true
+    },
+    {
+      "source": "/kron",
+      "destination": "/prosjekter/kron",
+      "permanent": true
+    },
+    {
+      "source": "/magnat-kaffehus",
+      "destination": "/prosjekter/magnat-kaffehus",
+      "permanent": true
+    },
+    {
+      "source": "/magnat-kaffehus-x-bahr",
+      "destination": "/prosjekter/magnat-kaffehus-x-bahr",
+      "permanent": true
+    },
+    {
+      "source": "/nbkf-2023",
+      "destination": "/prosjekter/nbkf-2023",
+      "permanent": true
+    },
+    {
+      "source": "/nordnet",
+      "destination": "/prosjekter/nordnet",
+      "permanent": true
+    },
+    {
+      "source": "/nordnet-mari",
+      "destination": "/prosjekter/nordnet-mari",
+      "permanent": true
+    },
+    {
+      "source": "/oslo-riv-as",
+      "destination": "/prosjekter/oslo-riv-as",
+      "permanent": true
+    },
+    {
+      "source": "/plm",
+      "destination": "/prosjekter/plm",
+      "permanent": true
+    },
+    {
+      "source": "/pronex-as",
+      "destination": "/prosjekter/pronex-as",
+      "permanent": true
+    },
+    {
+      "source": "/scan-granitt",
+      "destination": "/prosjekter/scan-granitt",
+      "permanent": true
+    },
+    {
+      "source": "/scan-granitt-jan-thomas-harlem",
+      "destination": "/prosjekter/scan-granitt-jan-thomas-harlem",
+      "permanent": true
+    },
+    {
+      "source": "/siga",
+      "destination": "/prosjekter/siga",
+      "permanent": true
+    },
+    {
+      "source": "/spylevakta",
+      "destination": "/prosjekter/spylevakta",
+      "permanent": true
+    },
+    {
+      "source": "/stiil",
+      "destination": "/prosjekter/stiil",
+      "permanent": true
+    },
+    {
+      "source": "/svensson-nkleby",
+      "destination": "/prosjekter/svensson-nkleby",
+      "permanent": true
+    },
+    {
+      "source": "/troll-trevarefabrikk",
+      "destination": "/prosjekter/troll-trevarefabrikk",
+      "permanent": true
+    },
+    {
+      "source": "/vedlike",
+      "destination": "/prosjekter/vedlike",
+      "permanent": true
+    }
+  ]
+}
